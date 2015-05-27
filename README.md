@@ -4,17 +4,35 @@ This repo shows some simple examples of how to perform Tenon assertions as part 
 
 ## Quick Start
 
-Export your Tenon API Key as an env variable.
+1. Make sure you have [NodeJS](https://nodejs.org) installed (currently, version 0.10.33), and you can use the `npm` command:
 
-```shell
-$ export TENON_API_KEY=1234567890ABCDEFG
-```
+    ```shell
+    $ npm version
+    ```
 
-Run the tests using Google Chrome via
+1. Install [Grunt](http://gruntjs.com) globally:
 
-```shell
-$ grunt webdriver
-```
+    ```shell
+    $ npm install -g grunt-cli
+    ```
+
+1. Install dependencies from the project root directory:
+
+    ```shell
+    $ npm install
+    ```
+
+1. Export your Tenon API Key as an environment variable:
+
+    ```shell
+    $ export TENON_API_KEY=1234567890ABCDEFG
+    ```
+
+1. Run the tests using Google Chrome:
+
+    ```shell
+    $ grunt webdriver
+    ```
 
 ## Important bits...
 
