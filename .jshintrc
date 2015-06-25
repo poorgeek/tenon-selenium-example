@@ -13,6 +13,10 @@
   "node": true,
   "indent": 4,
   "globals": {
-    "assert": true
+    "assert": true,
+    "browser": true,
+    "describe": true,
+    "beforeEach": true,
+    "it": true
   }
 }

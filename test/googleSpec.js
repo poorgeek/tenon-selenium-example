@@ -1,14 +1,12 @@
 'use strict';
 
 var assert = require('assert'),
-    webdriverio = require('webdriverio'),
     tenonCommands = require('./helpers/tenonCommands');
 
 // Load the Tenon helper commands
 browser
     .addCommand('tenonAnalyzeUrl', tenonCommands.tenonAnalyzeUrl)
     .addCommand('tenonAnalyzeHtml', tenonCommands.tenonAnalyzeHtml);
-
 
 beforeEach(function() {
     browser.url('http://www.google.com');
@@ -40,29 +38,4 @@ describe('Google Settings menu', function() {
         })
         .call(done);
     });
-
 });
-
-// client
-//     .init()
-//     .title(function(err, res) {
-//         assert.strictEqual(res === 'Google');
-//     })
-//     .tenonAnalyzeUrl(function(err, res) {
-//         assert.strictEqual(res.resultSet.length === 6, 'should have 6 errors');
-//     })
-
-    // .click('input[name="q"]')
-    // .keys(['http://www.google.com'])
-    // .pause(2000)
-    // .keys(['Enter'])
-
-    // // On to the Tenon Results page
-    // .title(function(err, res) {
-    //     assert.strictEqual(res === 'Google Results');
-    // })
-    // .tenonAnalyzeUrl(function(err, res) {
-    //     assert.strictEqual(res.resultSet.length === 0, 'should have 0 errors from Tenon.io');
-    // })
-
-    // .end();

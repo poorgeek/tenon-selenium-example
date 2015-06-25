@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-webdriver');
 
@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                 }
             },
             all: {
-                tests: ['test/**/*Spec.js'],
+                tests: ['test/**/*Spec.js']
             }
         }
     });

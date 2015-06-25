@@ -1,7 +1,7 @@
 'use strict';
 
-var tenonNode = require('tenon-node'),
-    tenonApi = new tenonNode({
+var TenonNode = require('tenon-node'),
+    tenonApi = new TenonNode({
         key: process.env.TENON_API_KEY
     });
 
