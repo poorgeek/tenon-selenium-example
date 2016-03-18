@@ -8,26 +8,28 @@ var TenonNode = require('tenon-node'),
 module.exports = {
 
     // Analyze the current URL in Tenon
-    tenonAnalyzeUrl: function(cb) {
-        this.url(function(err, urlResult) {
-            tenonApi.analyze(urlResult.value, function(err, tenonResult) {
+    tenonAnalyzeUrl: function() {
+        var url = this.url().value;
+        return new Promise(function(resolve, reject) {
+            tenonApi.analyze(url, function(err, tenonResult) {
                 if (err) {
-                    console.error(err);
+                    reject(err);
                 } else {
-                    cb(err, tenonResult);
+                    resolve(tenonResult);
                 }
             });
         });
     },
 
     // Analyze the HTML identified by a specified selector in Tenon
-    tenonAnalyzeHtml: function(selector, cb) {
-        this.getHTML(selector, function(err, html) {
+    tenonAnalyzeHtml: function(selector) {
+        var html = this.getHTML(selector);
+        return new Promise(function(resolve, reject) {
             tenonApi.analyze(html, function(err, tenonResult) {
                 if (err) {
-                    console.error(err);
+                    reject(err);
                 } else {
-                    cb(err, tenonResult);
+                    resolve(tenonResult);
                 }
             });
         });

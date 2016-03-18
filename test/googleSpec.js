@@ -1,41 +1,33 @@
 'use strict';
 
-var assert = require('assert'),
-    tenonCommands = require('./helpers/tenonCommands');
+var assert = require('assert');
+var tenonCommands = require('./helpers/tenonCommands');
 
 // Load the Tenon helper commands
-browser
-    .addCommand('tenonAnalyzeUrl', tenonCommands.tenonAnalyzeUrl)
-    .addCommand('tenonAnalyzeHtml', tenonCommands.tenonAnalyzeHtml);
+browser.addCommand('tenonAnalyzeUrl', tenonCommands.tenonAnalyzeUrl);
+browser.addCommand('tenonAnalyzeHtml', tenonCommands.tenonAnalyzeHtml);
 
 beforeEach(function() {
-    browser.url('http://www.google.com');
+    browser.url('https://www.google.com');
 });
 
 describe('google.com', function() {
-    it('should have "Google" as the page title', function(done) {
-        browser.getTitle(function(err, res) {
-            assert(res === 'Google');
-        })
-        .call(done);
+    it('should have "Google" as the page title', function() {
+        var title = browser.getTitle();
+        assert(title === 'Google');
     });
 
-    it('should have no accessibility errors', function(done) {
-        browser.tenonAnalyzeUrl(function(err, res) {
-            assert(res.resultSet.length === 0, 'should have 0 errors');
-        })
-        .call(done);
+    it('should have no accessibility errors', function() {
+        var response = browser.tenonAnalyzeUrl();
+        assert(response.resultSet.length === 0, 'should have 0 errors');
     });
 });
 
 describe('Google Settings menu', function() {
-    it('should have no accessibility errors', function(done) {
-        browser
-        .click('#fsettl')
-        .pause(100)
-        .tenonAnalyzeHtml('#fsett', function(err, res) {
-            assert(res.resultSet.length === 0, 'should have 0 errors');
-        })
-        .call(done);
+    it('should have no accessibility errors', function() {
+        browser.click('#fsettl');
+        browser.pause(100);
+        var response = browser.tenonAnalyzeHtml('#fsett');
+        assert(response.resultSet.length === 0, 'should have 0 errors');
     });
 });
