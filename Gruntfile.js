@@ -13,13 +13,15 @@ module.exports = function(grunt) {
         },
 
         selenium_standalone: {
+            options: {
+                stopOnExit: true
+            },
             server: {
-                stopOnExit: true,
-                seleniumVersion: '2.47.0',
+                seleniumVersion: '2.53.0',
                 seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
                 drivers: {
                     chrome: {
-                        version: '2.20',
+                        version: '2.21',
                         arch: process.arch,
                         baseURL: 'http://chromedriver.storage.googleapis.com'
                     }
