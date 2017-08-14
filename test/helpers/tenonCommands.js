@@ -14,6 +14,9 @@ module.exports = {
             tenonApi.analyze(url, function(err, tenonResult) {
                 if (err) {
                     reject(err);
+                } if (tenonResult.status > 400) {
+                    console.log(tenonResult.info);
+                    reject(tenonResult.info);
                 } else {
                     resolve(tenonResult);
                 }
@@ -28,6 +31,9 @@ module.exports = {
             tenonApi.analyze(html, function(err, tenonResult) {
                 if (err) {
                     reject(err);
+                } if (tenonResult.status > 400) {
+                    console.log(tenonResult.info);
+                    reject(tenonResult.info);
                 } else {
                     resolve(tenonResult);
                 }
