@@ -13,8 +13,8 @@
     "grunt-selenium-standalone": "^1.0.1",
     "grunt-webdriver": "^2.0.0",
     "tenon-node": "^0.4.0",
-    "wdio-dot-reporter": "0.0.6",
-    "wdio-mocha-framework": "^0.4.0",
+    "wdio-dot-reporter": "^0.0.8",
+    "wdio-mocha-framework": "^0.5.10",
     "webdriverio": "^4.0.3"
   }
 }

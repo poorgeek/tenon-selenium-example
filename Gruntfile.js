@@ -17,11 +17,11 @@ module.exports = function(grunt) {
                 stopOnExit: true
             },
             server: {
-                seleniumVersion: '2.53.0',
+                seleniumVersion: '3.5.0',
                 seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
                 drivers: {
                     chrome: {
-                        version: '2.21',
+                        version: '2.31',
                         arch: process.arch,
                         baseURL: 'http://chromedriver.storage.googleapis.com'
                     }
