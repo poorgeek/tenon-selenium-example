@@ -28,11 +28,13 @@ This repo shows some simple examples of how to perform Tenon assertions as part 
     $ export TENON_API_KEY=1234567890ABCDEFG
     ```
 
-1. Run the tests using Google Chrome:
+1. Start the selenium server and run the example tests using Google Chrome against Google.com:
 
     ```shell
-    $ grunt webdriver
+    $ grunt
     ```
+
+    As of 2017-08-14, this results in one (1) passing and two (2) failing tests on Google.com.
 
 ## Important bits...
 
